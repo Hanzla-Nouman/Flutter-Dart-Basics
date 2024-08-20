@@ -1,8 +1,7 @@
 import 'dart:io';
 
 void main() {
-
-  // Variables and Datatypes
+  //============================ Variables and Datatypes
   print("Welcome to Dart!!");
 
   var lang = "Flutter";
@@ -17,11 +16,7 @@ void main() {
   bool isLogin = true;
   print(isLogin);
 
-  //  stdout.write("Name: ");
-  //  var name =  stdin.readLineSync();
-  //  print("Name is $name");
-
- // Dynamically storing data
+  //=============================== Dynamically storing data
   dynamic response = 4;
   response = true;
   response = "Hanlza";
@@ -30,5 +25,78 @@ void main() {
   var res;
   res = true;
   res = "Hanlza";
-  print(res); 
+  print(res);
+
+  //============================== Getting data from user
+
+  //  stdout.write("Name: ");
+  //  var name =  stdin.readLineSync();
+  //  print("Name is $name");
+
+  //========================================= Calling Functions
+
+  printGreet();
+  printSomething("Hanzla is learning dart");
+
+  //======================================= Using class
+
+  var safari = Animals();
+  safari.printAnimal();
+
+  //====================================== Lists
+  var firstList = [1, 2, 3, 4, 5];
+  firstList.add(6);
+  print(firstList);
+
+  var secondList = [6, 7];
+  firstList.addAll(secondList);
+
+  print(firstList);
+
+  firstList.insert(2, 100);
+  print(firstList);
+
+  firstList.replaceRange(3, 4, [200, 300]);
+  print(firstList);
+
+  firstList.removeLast();
+  print(firstList);
+
+  firstList.remove(200);
+  print(firstList);
+
+  firstList.removeAt(2);
+  print(firstList);
+
+  firstList.removeRange(3, 5);
+  print(firstList);
+
+  print("Length: ${firstList.length}");
+  print("Reversed: ${firstList.reversed}");
+  print("First Element: ${firstList.first}");
+  print("Last: ${firstList.last}");
+  print("Is Empty: ${firstList.isEmpty}");
+  print("Is not Empty: ${firstList.isNotEmpty}");
+  print("Specific Element: ${firstList.elementAt(2)}");
+}
+
+//====================================== Functions
+
+void printGreet() {
+  print("Good Morning");
+}
+
+void printSomething(String word) {
+  print("Here is the Printed Word `" + word + "`");
+}
+
+//==================================== Classes and Constructor
+class Animals {
+  // The below function is default contructor and optional. Used to run the function everytime when the class will be used.
+  Animals() {
+    print("The constructor is calling");
+  }
+  void printAnimal() {
+    print("Lion,Tiger");
+  }
 }
