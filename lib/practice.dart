@@ -78,6 +78,24 @@ void main() {
   print("Is Empty: ${firstList.isEmpty}");
   print("Is not Empty: ${firstList.isNotEmpty}");
   print("Specific Element: ${firstList.elementAt(2)}");
+
+//====================================== Maps
+
+  var map_one = {'key1': 'Hanzla', 'key2': 0504, 'age': 17};
+
+  print(map_one);
+  print(map_one['key2']);
+
+  map_one['key2'] = '24F-0504';
+  print(map_one);
+
+  print(map_one.isNotEmpty);
+  print(map_one.isEmpty);
+  print(map_one.length);
+  print(map_one.keys);
+  print(map_one.values);
+  print(map_one.containsKey('age'));
+  print(map_one.remove('key2'));
 }
 
 //====================================== Functions
