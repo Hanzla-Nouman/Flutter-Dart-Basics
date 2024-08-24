@@ -96,6 +96,30 @@ void main() {
   print(map_one.values);
   print(map_one.containsKey('age'));
   print(map_one.remove('key2'));
+
+//==================================== Conditional Programming
+  var rollNumber = 110;
+  if (rollNumber == 90) {
+    print("Number is Ninty");
+  } else if (rollNumber == 110) {
+    print("Number is 110");
+  } else {
+    print("Number is Nothing");
+  }
+
+  //==================================== Loops
+
+  for (var i = 0; i < 3; i++) {
+    print("It is ${i + 1} time in for loop");
+  }
+
+  var loopNum = 0;
+  while (loopNum < 3) {
+    print("It is ${loopNum + 1} time in while loop");
+    loopNum++;
+  }
+
+  // ===================  Main Function Ending Here =================== //
 }
 
 //====================================== Functions
