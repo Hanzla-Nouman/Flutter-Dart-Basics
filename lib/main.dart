@@ -45,8 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
             child: Text(
           "This is Child",
-          style: TextStyle(fontSize: 23),
-         
+          style: TextStyle(
+              fontSize: 23,
+              color: Colors.blueGrey,
+              fontWeight: FontWeight.w500,
+              backgroundColor: Colors.black26),
+              
         )),
       )),
     );
