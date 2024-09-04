@@ -34,25 +34,51 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Hanzla Numan is a good boy"),
-      ),
-      body: Center(
-          child: Container(
-        height: 200,
-        width: 200,
-        color: Colors.deepOrangeAccent,
-        child: Center(
-            child: Text(
-          "This is Child",
-          style: TextStyle(
-              fontSize: 23,
-              color: Colors.blueGrey,
-              fontWeight: FontWeight.w500,
-              backgroundColor: Colors.black26),
+        appBar: AppBar(
+          title: Text("Hanzla Numan is a good boy"),
+        ),
+        body: Center(
+          //     child: Container(
+          //   height: 200,
+          //   width: 200,
+          //   color: Colors.deepOrangeAccent,
+          //   child: const Center(
+          //       child: Text(
+          //     "This is Child",
+          //     style: TextStyle(
+          //         fontSize: 23,
+          //         color: Colors.blueGrey,
+          //         fontWeight: FontWeight.w500,
+          //         backgroundColor: Colors.black26),
+
+          //   )),
+          // )
+          // child: TextButton(
+          //     onPressed: () {
+          //       print('Text Button');
+          //     },
+          //     onLongPress: () {
+          //       print('Long Pressed');
+          //     },
+          //     child: Text('Text Button')),
+          // child: ElevatedButton(
+          //     onPressed: () {
+          //       print('Elevated Button');
+          //     },
+          //     onLongPress: () {
+          //       print('Long Pressed');
+          //     },
+          //     child: Text('Elevated Button')),
+          child: OutlinedButton(
+              onPressed: () {
+                print('Outlined Button');
+              },
+              onLongPress: () {
+                print('Long Pressed');
+              },
+              child: Text('Outlined Button')),
               
-        )),
-      )),
-    );
+              
+        ));
   }
 }
