@@ -34,10 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Hanzla Numan is a good boy"),
-        ),
-        body: Center(
+      appBar: AppBar(
+        title: Text("Hanzla Numan is a good boy"),
+      ),
+      body:
+          //  Center(
           //     child: Container(
           //   height: 200,
           //   width: 200,
@@ -50,7 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
           //         color: Colors.blueGrey,
           //         fontWeight: FontWeight.w500,
           //         backgroundColor: Colors.black26),
-
           //   )),
           // )
           // child: TextButton(
@@ -69,16 +69,43 @@ class _MyHomePageState extends State<MyHomePage> {
           //       print('Long Pressed');
           //     },
           //     child: Text('Elevated Button')),
-          child: OutlinedButton(
-              onPressed: () {
-                print('Outlined Button');
-              },
-              onLongPress: () {
-                print('Long Pressed');
-              },
-              child: Text('Outlined Button')),
-              
-              
-        ));
+          // child: OutlinedButton(
+          //     onPressed: () {
+          //       print('Outlined Button');
+          //     },
+          //     onLongPress: () {
+          //       print('Long Pressed');
+          //     },
+          //     child: Text('Outlined Button')),
+          // child: Container(child: Image.asset('assets/images/image.png'),),
+Container(height: 300, child:  Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'A',
+            style: TextStyle(fontSize: 25),
+          ),
+          Text(
+            'B',
+            style: TextStyle(fontSize: 25),
+          ),
+          Text(
+            'C',
+            style: TextStyle(fontSize: 25),
+          ),
+          Text(
+            'D',
+            style: TextStyle(fontSize: 25),
+          ),
+          Text(
+            'E',
+            style: TextStyle(fontSize: 25),
+          ),
+        ],
+      ),)
+         
+      // )
+    );
   }
 }
