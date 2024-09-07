@@ -78,63 +78,79 @@ class _MyHomePageState extends State<MyHomePage> {
             //     },
             //     child: Text('Outlined Button')),
             // child: Container(child: Image.asset('assets/images/image.png'),),
-            Container(
-          height: 300,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+            //
+            Center(
+          child: Container(
+            
+            child: Padding(padding: EdgeInsets.only(bottom: 11), child: 
+               SingleChildScrollView(
+              
+              child: Column(
                 children: [
-                  InkWell(
-                    onTap: () {
-                      print('I am A');
-                    },
-                    child: Text(
-                      'A',
-                      style: TextStyle(fontSize: 25),
+                  Container(
+                    width: 400,
+                    height: 200,
+                    color: Colors.brown,
+                  ),
+                  Container(
+
+                    width: 400,
+                    height: 200,
+                    color: Colors.cyanAccent,
+                    child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                       Container(
+                    width: 170,
+                    height: 200,
+                    color: Colors.blueGrey,
+                  ),
+                       Container(
+                    width: 170,
+                    height: 200,
+                    color: Colors.black38,
+                  ),
+                       Container(
+                    width: 170,
+                    height: 200,
+                    color: Colors.black12,
+                  ),
+                       Container(
+                    width: 170,
+                    height: 200,
+                    color: Colors.amberAccent,
+                  ),
+                       Container(
+                    width: 170,
+                    height: 200,
+                    color: Colors.black38,
+                  ),
+                        ],
+                      ),
                     ),
                   ),
-                  Text(
-                    'B',
-                    style: TextStyle(fontSize: 25),
+                  Container(
+                    width: 400,
+                    height: 200,
+                    color: Colors.green,
                   ),
-                  Text(
-                    'C',
-                    style: TextStyle(fontSize: 25),
+                  Container(
+                    width: 400,
+                    height: 200,
+                    color: Colors.deepOrangeAccent,
                   ),
-                  Text(
-                    'D',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                  Text(
-                    'E',
-                    style: TextStyle(fontSize: 25),
+                  Container(
+                    width: 400,
+                    height: 200,
+                    color: Colors.amber,
                   ),
                 ],
               ),
-              Text(
-                'A',
-                style: TextStyle(fontSize: 25),
-              ),
-              Text(
-                'B',
-                style: TextStyle(fontSize: 25),
-              ),
-              Text(
-                'C',
-                style: TextStyle(fontSize: 25),
-              ),
-              Text(
-                'D',
-                style: TextStyle(fontSize: 25),
-              ),
-              Text(
-                'E',
-                style: TextStyle(fontSize: 25),
-              ),
-            ],
+            ),
+            
+            )
+          
           ),
         )
 
