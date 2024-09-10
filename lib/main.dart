@@ -151,6 +151,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 400,
                     height: 200,
                     color: Colors.green,
+                    child: Center(
+                      child: Container(width: 150,height: 150,decoration: BoxDecoration(
+                        color: Colors.amberAccent,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(width: 4,color: const Color.fromARGB(255, 167, 141, 63)),
+                        boxShadow: [BoxShadow(blurRadius: 10,color: Colors.black26,spreadRadius: 11)]
+
+                      ),),
+                    ),
                   ),
                   Container(
                     width: 400,
