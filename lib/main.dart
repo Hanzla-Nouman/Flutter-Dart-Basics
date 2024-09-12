@@ -82,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // child: Container(child: Image.asset('assets/images/image.png'),),
             //
             Center(
+                child: Container(
           child: Container(
               child: Padding(
             padding: EdgeInsets.only(bottom: 11),
@@ -89,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 children: [
                   Container(
-                    width: 400,
+                    // width: 400,
                     height: 200,
                     color: Colors.brown,
                     child: ListView.separated(
@@ -111,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Container(
-                    width: 400,
+                    // width: 400,
                     height: 200,
                     color: Colors.cyanAccent,
                     child: SingleChildScrollView(
@@ -148,26 +149,61 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Container(
-                    width: 400,
+                    // width: 400,
                     height: 200,
                     color: Colors.green,
                     child: Center(
-                      child: Container(width: 150,height: 150,decoration: BoxDecoration(
-                        color: Colors.amberAccent,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(width: 4,color: const Color.fromARGB(255, 167, 141, 63)),
-                        boxShadow: [BoxShadow(blurRadius: 10,color: Colors.black26,spreadRadius: 11)]
-
-                      ),),
+                      child: Container(
+                        width: 150,
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: Colors.amberAccent,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                                width: 4,
+                                color: const Color.fromARGB(255, 167, 141, 63)),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 10,
+                                  color: Colors.black26,
+                                  spreadRadius: 11)
+                            ]),
+                      ),
                     ),
                   ),
                   Container(
-                    width: 400,
+                    // width: 400,
                     height: 200,
-                    color: Colors.deepOrangeAccent,
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    child: Row(
+                      children: [
+                        Expanded(flex:2,child:  Container(
+                          
+                          height: 200,
+                          color: const Color.fromARGB(255, 254, 8, 62),
+                        ),),
+                        Expanded(flex:3,child:  Container(
+                          
+                          height: 200,
+                          color: const Color.fromARGB(255, 56, 45, 14),
+                        ),),
+                        Expanded(flex:4,child:  Container(
+                          
+                          height: 200,
+                          color: const Color.fromARGB(255, 42, 255, 220),
+                        ),),
+                       
+                     
+                        Expanded(flex:5,child:  Container(
+                         
+                          height: 200,
+                          color: const Color.fromRGBO(20, 125, 170, 1),
+                        ),),
+                      ],
+                    ),
                   ),
                   Container(
-                    width: 400,
+                    // width: 400,
                     height: 200,
                     color: Colors.amber,
                   ),
@@ -175,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           )),
-        )
+        ))
 
         // )
         );
