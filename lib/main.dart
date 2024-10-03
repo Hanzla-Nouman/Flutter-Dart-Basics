@@ -177,36 +177,45 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: const Color.fromARGB(255, 255, 255, 255),
                     child: Row(
                       children: [
-                        Expanded(flex:2,child:  Container(
-                          
-                          height: 200,
-                          color: const Color.fromARGB(255, 254, 8, 62),
-                        ),),
-                        Expanded(flex:3,child:  Container(
-                          
-                          height: 200,
-                          color: const Color.fromARGB(255, 56, 45, 14),
-                        ),),
-                        Expanded(flex:4,child:  Container(
-                          
-                          height: 200,
-                          color: const Color.fromARGB(255, 42, 255, 220),
-                        ),),
-                       
-                     
-                        Expanded(flex:5,child:  Container(
-                         
-                          height: 200,
-                          color: const Color.fromRGBO(20, 125, 170, 1),
-                        ),),
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            height: 200,
+                            color: const Color.fromARGB(255, 254, 8, 62),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 3,
+                          child: Container(
+                            height: 200,
+                            color: const Color.fromARGB(255, 56, 45, 14),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 4,
+                          child: Container(
+                            height: 200,
+                            color: const Color.fromARGB(255, 42, 255, 220),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 5,
+                          child: Container(
+                            height: 200,
+                            color: const Color.fromRGBO(20, 125, 170, 1),
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                  Container(
-                    // width: 400,
-                    height: 200,
-                    color: Colors.amber,
-                  ),
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Container(
+                      margin: EdgeInsets.only(top: 20),
+                      height: 200,
+                      color: Colors.amber,
+                    ),
+                  )
                 ],
               ),
             ),
