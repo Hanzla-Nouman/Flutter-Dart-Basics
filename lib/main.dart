@@ -236,13 +236,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: EdgeInsets.all(10),
                     child: Container(
                       child: Center(
-                          child: Padding(child: Card(
-                            elevation: 10,
-                        child: Text(
+                          child: Card(
+                            elevation: 20,
+                            shadowColor: Colors.deepOrangeAccent,
+                        child:Padding(padding: EdgeInsets.all(10),child: Text(
                           'Dummy Text',
                           style: TextStyleCustom1(),
-                        ),
-                      ),)),
+                        ), )
+                      )),
                       margin: EdgeInsets.only(top: 20),
                       height: 200,
                       color: Colors.amber,
