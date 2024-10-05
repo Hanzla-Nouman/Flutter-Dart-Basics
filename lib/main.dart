@@ -1,3 +1,4 @@
+import 'package:classic/ui_helper/first.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,8 +15,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          textTheme: TextTheme(
+              headlineMedium: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.blue),
+              headlineLarge:
+                  TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
       home: const MyHomePage(title: 'Flutter'),
     );
   }
@@ -37,7 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Hanzla Numan is a bad boy"),
+          title: Text(
+            "Title for HANX",
+            style: TextStyle(fontFamily: "CustomFont1"),
+          ),
         ),
         body:
             //  Center(
@@ -92,13 +102,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     // width: 400,
                     height: 200,
-                    color: Colors.brown,
+                    color: Colors.white24,
                     child: ListView.separated(
                       itemBuilder: (content, index) {
-                        return Text(
-                          dummyData[index],
-                          style: TextStyle(
-                              fontSize: 21, color: Colors.amberAccent),
+                        return ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage:
+                                AssetImage('assets/images/image.png'),
+                            radius: 30,
+                          ),
+                          title: Text(
+                            dummyData[index],
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineLarge!
+                                .copyWith(color: Colors.brown),
+                          ),
+                          subtitle: Text(
+                            'List no .$index',
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                          trailing: Icon(Icons.add_a_photo),
                         );
                       },
                       separatorBuilder: (content, index) {
@@ -211,6 +235,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   Padding(
                     padding: EdgeInsets.all(10),
                     child: Container(
+                      child: Center(
+                          child: Padding(child: Card(
+                            elevation: 10,
+                        child: Text(
+                          'Dummy Text',
+                          style: TextStyleCustom1(),
+                        ),
+                      ),)),
                       margin: EdgeInsets.only(top: 20),
                       height: 200,
                       color: Colors.amber,
