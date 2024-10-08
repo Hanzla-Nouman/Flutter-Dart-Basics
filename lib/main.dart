@@ -38,6 +38,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 var dummyData = ['Ali', 'Ahmad', 'Hanzla', 'Hamza', 'Tayyab'];
+var email = TextEditingController();
+var password = TextEditingController();
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -237,17 +239,82 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Container(
                       child: Center(
                           child: Card(
-                            elevation: 20,
-                            shadowColor: Colors.deepOrangeAccent,
-                        child:Padding(padding: EdgeInsets.all(10),child: Text(
-                          'Dummy Text',
-                          style: TextStyleCustom1(),
-                        ), )
-                      )),
+                              elevation: 20,
+                              shadowColor: Colors.deepOrangeAccent,
+                              child: Padding(
+                                padding: EdgeInsets.all(10),
+                                child: Text(
+                                  'Dummy Text',
+                                  style: TextStyleCustom1(),
+                                ),
+                              ))),
                       margin: EdgeInsets.only(top: 20),
                       height: 200,
                       color: Colors.amber,
                     ),
+                  ),
+                  Container(
+                    height: 400,
+                    width: 300,
+                    child: Center(
+                        child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextField(
+                          controller: email,
+                          enabled: true,
+                          decoration: InputDecoration(
+                            hintText: "Enter Email",
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide(
+                                    color: Colors.deepPurpleAccent, width: 3)),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide(
+                                    color: Colors.deepPurple, width: 2)),
+                            disabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide(
+                                    color: Colors.black12, width: 2)),
+                            prefixIcon: Icon(Icons.lock),
+                          ),
+                        ),
+                        TextField(
+                          keyboardType: TextInputType.phone,
+                          controller: password,
+                          obscureText: true,
+                          enabled: true,
+                          decoration: InputDecoration(
+                              hintText: "Enter Password",
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: BorderSide(
+                                      color: Colors.deepPurpleAccent,
+                                      width: 3)),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: BorderSide(
+                                      color: Colors.deepPurple, width: 2)),
+                              disabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                  borderSide: BorderSide(
+                                      color: Colors.black12, width: 2)),
+                              prefixIcon: Icon(Icons.lock),
+                              suffixIcon: IconButton(
+                                  onPressed: () {
+                                    print("show");
+                                  },
+                                  icon: Icon(Icons.remove_red_eye))),
+                        ),
+                        ElevatedButton(
+                            onPressed: () {
+                              print(email.text.toString());
+                              print(password.text.toString());
+                            },
+                            child: Text("Sign in"))
+                      ],
+                    )),
                   )
                 ],
               ),
