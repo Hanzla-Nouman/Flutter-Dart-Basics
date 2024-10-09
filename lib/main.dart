@@ -44,6 +44,7 @@ var password = TextEditingController();
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var time = DateTime.now();
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -254,7 +255,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   Container(
-                    height: 400,
+                    height: 200,
                     width: 300,
                     child: Center(
                         child: Column(
@@ -315,7 +316,28 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Text("Sign in"))
                       ],
                     )),
-                  )
+                  ),
+                  Container(
+                      height: 200,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('${time}'),
+                          ElevatedButton(
+                              onPressed: () {
+                                setState(() {});
+                              },
+                              child: Text('Get time')),
+                          ElevatedButton(
+                              onPressed: () {
+                                showDatePicker(
+                                    context: context,
+                                    firstDate: DateTime(2021),
+                                    lastDate: DateTime(2023));
+                              },
+                              child: Text('Select time')),
+                        ],
+                      ))
                 ],
               ),
             ),
