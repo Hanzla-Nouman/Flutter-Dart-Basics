@@ -330,10 +330,10 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text('Get time')),
                           ElevatedButton(
                               onPressed: () {
-                                showDatePicker(
+                                showTimePicker(
                                     context: context,
-                                    firstDate: DateTime(2021),
-                                    lastDate: DateTime(2023));
+                                    initialTime: TimeOfDay.now(),
+                                    initialEntryMode: TimePickerEntryMode.dial);
                               },
                               child: Text('Select time')),
                         ],
