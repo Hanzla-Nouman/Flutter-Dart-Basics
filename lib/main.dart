@@ -45,6 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var time = DateTime.now();
+    var colorsGrid = [
+      Colors.amber,
+      Colors.black38,
+      Colors.cyan,
+      Colors.deepOrange,
+      Colors.deepPurple,
+      Colors.green,
+      Colors.grey
+    ];
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -329,15 +338,55 @@ class _MyHomePageState extends State<MyHomePage> {
                               },
                               child: Text('Get time')),
                           ElevatedButton(
-                              onPressed: () {
-                                showTimePicker(
+                              onPressed: () async {
+                                var timebypicker = await showTimePicker(
                                     context: context,
                                     initialTime: TimeOfDay.now(),
                                     initialEntryMode: TimePickerEntryMode.dial);
+                                print(timebypicker);
                               },
                               child: Text('Select time')),
                         ],
-                      ))
+                      )),
+                  // Container(
+                  //   height: 200,
+                  //   child: GridView.count(
+                  //     crossAxisCount: 5,
+                  //     children: [
+                  //       Container( color: colorsGrid[0]),
+                  //       Container( color: colorsGrid[1]),
+                  //       Container( color: colorsGrid[2]),
+                  //       Container( color: colorsGrid[3]),
+                  //       Container( color: colorsGrid[4]),
+                  //       Container( color: colorsGrid[5]),
+                  //       Container( color: colorsGrid[3]),
+                  //     ],
+                  //   ),
+                  // ),
+                  Container(
+                      height: 200,
+                      child: GridView.extent(
+                        maxCrossAxisExtent: 100,
+                        children: [
+                          Container(color: colorsGrid[0]),
+                          Container(color: colorsGrid[1]),
+                          Container(color: colorsGrid[2]),
+                          Container(color: colorsGrid[3]),
+                          Container(color: colorsGrid[4]),
+                          Container(color: colorsGrid[5]),
+                          Container(color: colorsGrid[3]),
+                        ],
+                      )),
+                  Container(
+                      height: 300,
+                      child: GridView.builder(
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3),
+                                  itemCount: colorsGrid.length,
+                          itemBuilder: (context, index) {
+                            return Container(color: colorsGrid[index]);
+                          })),
                 ],
               ),
             ),
