@@ -263,69 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Colors.amber,
                     ),
                   ),
-                  Container(
-                    height: 200,
-                    width: 300,
-                    child: Center(
-                        child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextField(
-                          controller: email,
-                          enabled: true,
-                          decoration: InputDecoration(
-                            hintText: "Enter Email",
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide(
-                                    color: Colors.deepPurpleAccent, width: 3)),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide(
-                                    color: Colors.deepPurple, width: 2)),
-                            disabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide(
-                                    color: Colors.black12, width: 2)),
-                            prefixIcon: Icon(Icons.lock),
-                          ),
-                        ),
-                        TextField(
-                          keyboardType: TextInputType.phone,
-                          controller: password,
-                          obscureText: true,
-                          enabled: true,
-                          decoration: InputDecoration(
-                              hintText: "Enter Password",
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide(
-                                      color: Colors.deepPurpleAccent,
-                                      width: 3)),
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide(
-                                      color: Colors.deepPurple, width: 2)),
-                              disabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide(
-                                      color: Colors.black12, width: 2)),
-                              prefixIcon: Icon(Icons.lock),
-                              suffixIcon: IconButton(
-                                  onPressed: () {
-                                    print("show");
-                                  },
-                                  icon: Icon(Icons.remove_red_eye))),
-                        ),
-                        ElevatedButton(
-                            onPressed: () {
-                              print(email.text.toString());
-                              print(password.text.toString());
-                            },
-                            child: Text("Sign in"))
-                      ],
-                    )),
-                  ),
+                  FieldsInputCus(),
                   Container(
                       height: 200,
                       child: Column(
@@ -348,6 +286,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text('Select time')),
                         ],
                       )),
+                      Container(width: 300,height: 300,child: 
+                      Stack(children: [
+                         Container(width: 300,height: 300,color: Colors.brown,),
+                        Positioned(child: Container(width: 50,height: 50,color: Colors.amber,),bottom: 10,right: 10,) ,
+                      ],)
+                      ,),
                   // Container(
                   //   height: 200,
                   //   child: GridView.count(
@@ -383,7 +327,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 3),
-                                  itemCount: colorsGrid.length,
+                          itemCount: colorsGrid.length,
                           itemBuilder: (context, index) {
                             return Container(color: colorsGrid[index]);
                           })),
@@ -395,5 +339,69 @@ class _MyHomePageState extends State<MyHomePage> {
 
         // )
         );
+  }
+}
+
+class FieldsInputCus extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      width: 300,
+      child: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextField(
+            controller: email,
+            enabled: true,
+            decoration: InputDecoration(
+              hintText: "Enter Email",
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide:
+                      BorderSide(color: Colors.deepPurpleAccent, width: 3)),
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.deepPurple, width: 2)),
+              disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.black12, width: 2)),
+              prefixIcon: Icon(Icons.lock),
+            ),
+          ),
+          TextField(
+            keyboardType: TextInputType.phone,
+            controller: password,
+            obscureText: true,
+            enabled: true,
+            decoration: InputDecoration(
+                hintText: "Enter Password",
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide:
+                        BorderSide(color: Colors.deepPurpleAccent, width: 3)),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.deepPurple, width: 2)),
+                disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide(color: Colors.black12, width: 2)),
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      print("show");
+                    },
+                    icon: Icon(Icons.remove_red_eye))),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                print(email.text.toString());
+                print(password.text.toString());
+              },
+              child: Text("Sign in"))
+        ],
+      )),
+    );
   }
 }
