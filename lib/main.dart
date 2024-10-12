@@ -1,4 +1,5 @@
 import 'package:classic/ui_helper/first.dart';
+import 'package:classic/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -292,6 +293,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Positioned(child: Container(width: 50,height: 50,color: Colors.amber,),bottom: 10,right: 10,) ,
                       ],)
                       ,),
+                      Center(child: SpecialButton(text: 'SPCL BTN'),),
                   Container(
                     height: 200,
                     child: GridView.count(
