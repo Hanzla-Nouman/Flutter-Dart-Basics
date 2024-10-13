@@ -295,6 +295,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       ,),
                       Center(child: SpecialButton(text: 'SPCL BTN',icon: Icon(Icons.local_activity),),),
                       Center(child: SpecialButton(text: 'SPCL BTN'),),
+                      Wrap(
+                        // direction: Axis.vertical,
+                        spacing: 10,
+                        runSpacing: 10,
+                        alignment: WrapAlignment.spaceAround,
+                        children: [
+                          Container(color: colorsGrid[1], width: 70,height: 70,),
+                          Container(color: colorsGrid[0], width: 70,height: 70,),
+                          Container(color: colorsGrid[1], width: 70,height: 70,),
+                          Container(color: colorsGrid[2], width: 70,height: 70,),
+                          Container(color: colorsGrid[3], width: 70,height: 70,),
+                          Container(color: colorsGrid[4], width: 70,height: 70,),
+                          Container(color: colorsGrid[2], width: 70,height: 70,),
+                        ],
+                      ),
                   // Container(
                   //   height: 200,
                   //   child: GridView.count(
