@@ -26,6 +26,6 @@ class SpecialButton extends StatelessWidget {
                   )
                 ],
               )
-            : Text(text, style: textstyle));
+            : Text(text, style: textstyle),style: ElevatedButton.styleFrom(shadowColor: bgColor,shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(11),bottomRight: Radius.circular(11)))),);
   }
 }

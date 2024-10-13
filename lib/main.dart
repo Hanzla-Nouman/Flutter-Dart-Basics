@@ -293,22 +293,23 @@ class _MyHomePageState extends State<MyHomePage> {
                         Positioned(child: Container(width: 50,height: 50,color: Colors.amber,),bottom: 10,right: 10,) ,
                       ],)
                       ,),
+                      Center(child: SpecialButton(text: 'SPCL BTN',icon: Icon(Icons.local_activity),),),
                       Center(child: SpecialButton(text: 'SPCL BTN'),),
-                  Container(
-                    height: 200,
-                    child: GridView.count(
-                      crossAxisCount: 5,
-                      children: [
-                        Container( color: colorsGrid[0]),
-                        Container( color: colorsGrid[1]),
-                        Container( color: colorsGrid[2]),
-                        Container( color: colorsGrid[3]),
-                        Container( color: colorsGrid[4]),
-                        Container( color: colorsGrid[5]),
-                        Container( color: colorsGrid[3]),
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   height: 200,
+                  //   child: GridView.count(
+                  //     crossAxisCount: 5,
+                  //     children: [
+                  //       Container( color: colorsGrid[0]),
+                  //       Container( color: colorsGrid[1]),
+                  //       Container( color: colorsGrid[2]),
+                  //       Container( color: colorsGrid[3]),
+                  //       Container( color: colorsGrid[4]),
+                  //       Container( color: colorsGrid[5]),
+                  //       Container( color: colorsGrid[3]),
+                  //     ],
+                  //   ),
+                  // ),
                   Container(
                       height: 200,
                       child: GridView.extent(
