@@ -1,6 +1,7 @@
 import 'package:classic/ui_helper/first.dart';
 import 'package:classic/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(const MyApp());
@@ -287,29 +288,99 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Text('Select time')),
                         ],
                       )),
-                      Container(width: 300,height: 300,child: 
-                      Stack(children: [
-                         Container(width: 300,height: 300,color: Colors.brown,),
-                        Positioned(child: Container(width: 50,height: 50,color: Colors.amber,),bottom: 10,right: 10,) ,
-                      ],)
-                      ,),
-                      Center(child: SpecialButton(text: 'SPCL BTN',icon: Icon(Icons.local_activity),),),
-                      Center(child: SpecialButton(text: 'SPCL BTN'),),
-                      Wrap(
-                        // direction: Axis.vertical,
-                        spacing: 10,
-                        runSpacing: 10,
-                        alignment: WrapAlignment.spaceAround,
-                        children: [
-                          Container(color: colorsGrid[1], width: 70,height: 70,),
-                          Container(color: colorsGrid[0], width: 70,height: 70,),
-                          Container(color: colorsGrid[1], width: 70,height: 70,),
-                          Container(color: colorsGrid[2], width: 70,height: 70,),
-                          Container(color: colorsGrid[3], width: 70,height: 70,),
-                          Container(color: colorsGrid[4], width: 70,height: 70,),
-                          Container(color: colorsGrid[2], width: 70,height: 70,),
-                        ],
+                  Container(
+                    width: 300,
+                    height: 300,
+                    child: Stack(
+                      children: [
+                        Container(
+                          width: 300,
+                          height: 300,
+                          color: Colors.brown,
+                        ),
+                        Positioned(
+                          child: Container(
+                            width: 50,
+                            height: 50,
+                            color: Colors.amber,
+                          ),
+                          bottom: 10,
+                          right: 10,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: SpecialButton(
+                      text: 'SPCL BTN',
+                      icon: Icon(Icons.local_activity),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 100,
+                    child: Center(
+                      child: SpecialButton(text: 'SPCL BTN'),
+                    ),
+                  ),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                        maxHeight: 100,
+                        minHeight: 50,
+                        minWidth: 200,
+                        maxWidth: 300),
+                    // child: SizedBox.expand(
+                    //   child: ElevatedButton(
+                    //       onPressed: () {}, child: Text('Button'),style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),),
+                    // ),
+                    child: SizedBox.shrink(
+                      child: ElevatedButton(
+                          onPressed: () {}, child: Text('Button'),style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),),
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  Wrap(
+                    // direction: Axis.vertical,
+                    spacing: 10,
+                    runSpacing: 10,
+                    alignment: WrapAlignment.spaceAround,
+                    children: [
+                      Container(
+                        color: colorsGrid[1],
+                        width: 70,
+                        height: 70,
                       ),
+                      Container(
+                        color: colorsGrid[0],
+                        width: 70,
+                        height: 70,
+                      ),
+                      Container(
+                        color: colorsGrid[1],
+                        width: 70,
+                        height: 70,
+                      ),
+                      Container(
+                        color: colorsGrid[2],
+                        width: 70,
+                        height: 70,
+                      ),
+                      Container(
+                        color: colorsGrid[3],
+                        width: 70,
+                        height: 70,
+                      ),
+                      Container(
+                        color: colorsGrid[4],
+                        width: 70,
+                        height: 70,
+                      ),
+                      Container(
+                        color: colorsGrid[2],
+                        width: 70,
+                        height: 70,
+                      ),
+                    ],
+                  ),
                   // Container(
                   //   height: 200,
                   //   child: GridView.count(
