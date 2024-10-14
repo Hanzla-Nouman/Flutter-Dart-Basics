@@ -338,6 +338,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   SizedBox(height: 20,),
+                  RichText(text: TextSpan(
+                    style: TextStyle(color: Colors.brown,fontWeight: FontWeight.bold,fontSize: 30) ,
+                    children: [
+                      TextSpan(text: 'Welcome',style: TextStyle(fontStyle: FontStyle.italic)),
+                      TextSpan(text: ' to '),
+                      TextSpan(text: 'World',style: TextStyle(fontStyle: FontStyle.italic,color: Colors.blue,fontWeight: FontWeight.w900) ),
+                    ]
+                  )),
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
