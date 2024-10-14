@@ -303,6 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             width: 50,
                             height: 50,
                             color: Colors.amber,
+                            child: Icon(Icons.add_a_photo_outlined,size: 30,color: Colors.deepPurpleAccent,),
                           ),
                           bottom: 10,
                           right: 10,
