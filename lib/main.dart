@@ -44,6 +44,7 @@ var email = TextEditingController();
 var password = TextEditingController();
 
 class _MyHomePageState extends State<MyHomePage> {
+    var count = 0;
   @override
   Widget build(BuildContext context) {
     var time = DateTime.now();
@@ -298,12 +299,25 @@ class _MyHomePageState extends State<MyHomePage> {
                           height: 300,
                           color: Colors.brown,
                         ),
+                        Text('$count'),
                         Positioned(
-                          child: Container(
-                            width: 50,
-                            height: 50,
-                            color: Colors.amber,
-                            child: Icon(Icons.add_a_photo_outlined,size: 30,color: Colors.deepPurpleAccent,),
+                          child: Center(
+                            child: Container(
+                                width: 50,
+                                height: 50,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                      count++;
+                                      print(count);
+                                    setState(() {
+                                    });
+                                  },
+                                  child: Icon(
+                                    Icons.add,
+                                    size: 30,
+                                    color: Colors.deepPurpleAccent,
+                                  ),
+                                )),
                           ),
                           bottom: 10,
                           right: 10,
@@ -335,18 +349,34 @@ class _MyHomePageState extends State<MyHomePage> {
                     // ),
                     child: SizedBox.shrink(
                       child: ElevatedButton(
-                          onPressed: () {}, child: Text('Button'),style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),),
+                        onPressed: () {},
+                        child: Text('Button'),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blueAccent),
+                      ),
                     ),
                   ),
-                  SizedBox(height: 20,),
-                  RichText(text: TextSpan(
-                    style: TextStyle(color: Colors.brown,fontWeight: FontWeight.bold,fontSize: 30) ,
-                    children: [
-                      TextSpan(text: 'Welcome',style: TextStyle(fontStyle: FontStyle.italic)),
-                      TextSpan(text: ' to '),
-                      TextSpan(text: 'World',style: TextStyle(fontStyle: FontStyle.italic,color: Colors.blue,fontWeight: FontWeight.w900) ),
-                    ]
-                  )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  RichText(
+                      text: TextSpan(
+                          style: TextStyle(
+                              color: Colors.brown,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 30),
+                          children: [
+                        TextSpan(
+                            text: 'Welcome',
+                            style: TextStyle(fontStyle: FontStyle.italic)),
+                        TextSpan(text: ' to '),
+                        TextSpan(
+                            text: 'World',
+                            style: TextStyle(
+                                fontStyle: FontStyle.italic,
+                                color: Colors.blue,
+                                fontWeight: FontWeight.w900)),
+                      ])),
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
