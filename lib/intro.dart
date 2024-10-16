@@ -2,12 +2,11 @@ import 'package:classic/main.dart';
 import 'package:flutter/material.dart';
 
 class IntroPage extends StatelessWidget {
+  var a;
+  IntroPage(this.a);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
       body: Container(
         color: Colors.brown,
         child: Center(
@@ -20,7 +19,7 @@ class IntroPage extends StatelessWidget {
                               title: 'Main Page',
                             )));
               },
-              child: Text('Home Screen')),
+              child: Text('Home Screen $a')),
         ),
       ),
     );

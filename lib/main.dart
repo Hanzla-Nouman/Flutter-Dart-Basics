@@ -1,4 +1,5 @@
 import 'package:classic/intro.dart';
+import 'package:classic/splashScreen.dart';
 import 'package:classic/ui_helper/first.dart';
 import 'package:classic/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,10 @@ void main() {
   runApp(const MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
+
+
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -26,7 +30,7 @@ class MyApp extends StatelessWidget {
                   color: Colors.blue),
               headlineLarge:
                   TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
-      home: IntroPage(),
+      home: Splashscreen(),
     );
   }
 }
@@ -45,7 +49,7 @@ var email = TextEditingController();
 var password = TextEditingController();
 
 class _MyHomePageState extends State<MyHomePage> {
-    var count = 0;
+  var count = 0;
   @override
   Widget build(BuildContext context) {
     var time = DateTime.now();
@@ -308,9 +312,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 height: 50,
                                 child: ElevatedButton(
                                   onPressed: () {
+                                    setState(() {
                                       count++;
                                       print(count);
-                                    setState(() {
                                     });
                                   },
                                   child: Icon(
