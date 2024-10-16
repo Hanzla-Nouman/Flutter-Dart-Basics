@@ -1,3 +1,4 @@
+import 'package:classic/intro.dart';
 import 'package:classic/ui_helper/first.dart';
 import 'package:classic/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
                   color: Colors.blue),
               headlineLarge:
                   TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
-      home: const MyHomePage(title: 'Flutter'),
+      home: IntroPage(),
     );
   }
 }
@@ -60,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Title for HANX",
+            "Home",
             style: TextStyle(fontFamily: "CustomFont1"),
           ),
         ),
