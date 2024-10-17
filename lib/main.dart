@@ -9,10 +9,7 @@ void main() {
   runApp(const MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
-
-
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -49,6 +46,9 @@ var email = TextEditingController();
 var password = TextEditingController();
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _width = 200.0;
+  var _height = 100.0;
+  bool flag = false;
   var count = 0;
   @override
   Widget build(BuildContext context) {
@@ -382,6 +382,23 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.blue,
                                 fontWeight: FontWeight.w900)),
                       ])),
+                  AnimatedContainer(
+                    duration: Duration(milliseconds: 500),
+                    width: _width,
+                    height: _height,
+                    color: Colors.black87,
+                    curve: Curves.easeInExpo,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        flag = !flag;
+                        flag? (_height = 200.0) : (_height = 100.0);
+                        flag? (_width = 100.0) : (_width = 200.0);
+                        
+                        print(flag);
+                        setState(() {});
+                      },
+                      child: Text('Flip')),
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
