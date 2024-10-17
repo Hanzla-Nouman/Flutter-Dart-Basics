@@ -51,6 +51,8 @@ class _MyHomePageState extends State<MyHomePage> {
   var myOp = 1.0;
   bool flag = false;
   bool show = true;
+  bool crosstate = false;
+  var crosstatestate = CrossFadeState.showFirst;
   var count = 0;
   @override
   Widget build(BuildContext context) {
@@ -402,9 +404,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                       child: Text('Flip')),
                   AnimatedOpacity(
-                      opacity: myOp, duration: Duration(milliseconds: 700),
-                      child: Container(width: 200,height: 100,color: Colors.deepOrange,),
-                      ),
+                    opacity: myOp,
+                    duration: Duration(milliseconds: 700),
+                    child: Container(
+                      width: 200,
+                      height: 100,
+                      color: Colors.deepOrange,
+                    ),
+                  ),
                   ElevatedButton(
                       onPressed: () {
                         show = !show;
@@ -414,6 +421,30 @@ class _MyHomePageState extends State<MyHomePage> {
                         setState(() {});
                       },
                       child: Text('Show/Hide')),
+                  AnimatedCrossFade(
+                      firstChild: Container(
+                        child: Image.asset('assets/images/image.png'),
+                        width: 200,
+                        height: 200,
+                      ),
+                      sizeCurve: Curves.bounceIn,
+                      firstCurve: Curves.bounceOut,
+                      secondChild: Container(
+                        child: Image.asset('assets/images/github.jpg'),
+                        width: 200,
+                        height: 200,
+                      ),
+                      crossFadeState: crosstatestate,
+                      duration: Duration(seconds: 1)),
+                  ElevatedButton(
+                      onPressed: () {
+                        crosstate = !crosstate;
+                        crosstatestate = crosstate
+                            ? CrossFadeState.showSecond
+                            : CrossFadeState.showFirst;
+                        setState(() {});
+                      },
+                      child: Text('Change')),
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
