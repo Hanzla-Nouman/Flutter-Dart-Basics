@@ -1,3 +1,4 @@
+import 'package:classic/hero.dart';
 import 'package:classic/intro.dart';
 import 'package:classic/splashScreen.dart';
 import 'package:classic/ui_helper/first.dart';
@@ -445,6 +446,17 @@ class _MyHomePageState extends State<MyHomePage> {
                         setState(() {});
                       },
                       child: Text('Change')),
+                      Container(width: 200,height: 200,child:  InkWell(
+                    child: Hero(
+                      transitionOnUserGestures: true,
+                        tag: "background",
+                        child: Image.asset('assets/images/github.jpg')),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HeroPage()));
+                    },
+                  ),),
+                 
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
