@@ -48,7 +48,9 @@ var password = TextEditingController();
 class _MyHomePageState extends State<MyHomePage> {
   var _width = 200.0;
   var _height = 100.0;
+  var myOp = 1.0;
   bool flag = false;
+  bool show = true;
   var count = 0;
   @override
   Widget build(BuildContext context) {
@@ -392,13 +394,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   ElevatedButton(
                       onPressed: () {
                         flag = !flag;
-                        flag? (_height = 200.0) : (_height = 100.0);
-                        flag? (_width = 100.0) : (_width = 200.0);
-                        
+                        flag ? (_height = 200.0) : (_height = 100.0);
+                        flag ? (_width = 100.0) : (_width = 200.0);
+
                         print(flag);
                         setState(() {});
                       },
                       child: Text('Flip')),
+                  AnimatedOpacity(
+                      opacity: myOp, duration: Duration(milliseconds: 700),
+                      child: Container(width: 200,height: 100,color: Colors.deepOrange,),
+                      ),
+                  ElevatedButton(
+                      onPressed: () {
+                        show = !show;
+                        show ? (myOp = 1.0) : (myOp = 0.0);
+
+                        print(show);
+                        setState(() {});
+                      },
+                      child: Text('Show/Hide')),
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
