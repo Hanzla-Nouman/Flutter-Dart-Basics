@@ -206,7 +206,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 150,
                         height: 150,
                         decoration: BoxDecoration(
-                            color: Colors.amberAccent,
+                         
+                              gradient: RadialGradient(
+                                  colors: [
+                                    Color(0xffffecd2),
+                                    Color(0xfffecb69f),
+                                    
+                                  ],stops: [0.5,1.0],center: Alignment.topLeft
+                              ),
+                            
+                            
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 4,
@@ -305,11 +314,25 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Stack(
                       children: [
                         Container(
-                          width: 300,
-                          height: 300,
-                          color: Colors.brown,
+                            width: 300,
+                            height: 300,
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                  colors: [
+                                    Color(0xffffecd2),
+                                    Color(0xfffecb69f),
+                                    Color(0xfffecb32f)
+                                  ],
+                                  begin: FractionalOffset(0.0, 1.0),
+                                  end: FractionalOffset(1.5, 0.3),stops: [0.0,0.4,1.0]),
+                            )),
+                        Center(
+                          child: Text(
+                            '$count',
+                            style:
+                                TextStyle(color: Colors.black54, fontSize: 40),
+                          ),
                         ),
-                        Text('$count'),
                         Positioned(
                           child: Center(
                             child: Container(
@@ -322,11 +345,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                       print(count);
                                     });
                                   },
-                                  child: Icon(
+                                  child:Center(child: Icon(
                                     Icons.add,
                                     size: 30,
                                     color: Colors.deepPurpleAccent,
-                                  ),
+                                  ) ,),
                                 )),
                           ),
                           bottom: 10,
