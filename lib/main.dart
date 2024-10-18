@@ -453,7 +453,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Hero(
                           transitionOnUserGestures: true,
                           tag: "background",
-                          child: Image.asset('assets/images/github.jpg')),
+                          child: ClipRRect(
+                            child: Image.asset(
+                              'assets/images/github.jpg',
+                              fit: BoxFit.fill,
+                            ),
+                            borderRadius: BorderRadius.circular(11),
+                          )),
                       onTap: () {
                         Navigator.push(
                             context,
@@ -462,7 +468,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       },
                     ),
                   ),
-               
+
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
