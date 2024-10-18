@@ -446,17 +446,23 @@ class _MyHomePageState extends State<MyHomePage> {
                         setState(() {});
                       },
                       child: Text('Change')),
-                      Container(width: 200,height: 200,child:  InkWell(
-                    child: Hero(
-                      transitionOnUserGestures: true,
-                        tag: "background",
-                        child: Image.asset('assets/images/github.jpg')),
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HeroPage()));
-                    },
-                  ),),
-                 
+                  Container(
+                    width: 200,
+                    height: 200,
+                    child: InkWell(
+                      child: Hero(
+                          transitionOnUserGestures: true,
+                          tag: "background",
+                          child: Image.asset('assets/images/github.jpg')),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HeroPage()));
+                      },
+                    ),
+                  ),
+               
                   Wrap(
                     // direction: Axis.vertical,
                     spacing: 10,
