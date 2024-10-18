@@ -206,16 +206,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 150,
                         height: 150,
                         decoration: BoxDecoration(
-                         
-                              gradient: RadialGradient(
-                                  colors: [
-                                    Color(0xffffecd2),
-                                    Color(0xfffecb69f),
-                                    
-                                  ],stops: [0.5,1.0],center: Alignment.topLeft
-                              ),
-                            
-                            
+                            gradient: RadialGradient(colors: [
+                              Color(0xffffecd2),
+                              Color(0xfffecb69f),
+                            ],
+                            //  stops: [
+                            //   0.5,
+                            //   1.0
+                            // ],
+                             center: Alignment.topLeft),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 4,
@@ -324,7 +323,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     Color(0xfffecb32f)
                                   ],
                                   begin: FractionalOffset(0.0, 1.0),
-                                  end: FractionalOffset(1.5, 0.3),stops: [0.0,0.4,1.0]),
+                                  end: FractionalOffset(1.5, 0.3),
+                                  stops: [0.0, 0.4, 1.0]),
                             )),
                         Center(
                           child: Text(
@@ -345,11 +345,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                       print(count);
                                     });
                                   },
-                                  child:Center(child: Icon(
-                                    Icons.add,
-                                    size: 30,
-                                    color: Colors.deepPurpleAccent,
-                                  ) ,),
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.add,
+                                      size: 30,
+                                      color: Colors.deepPurpleAccent,
+                                    ),
+                                  ),
                                 )),
                           ),
                           bottom: 10,
