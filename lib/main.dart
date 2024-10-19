@@ -1,10 +1,10 @@
 import 'package:classic/hero.dart';
-import 'package:classic/intro.dart';
 import 'package:classic/splashScreen.dart';
 import 'package:classic/ui_helper/first.dart';
 import 'package:classic/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,12 +56,14 @@ class _MyHomePageState extends State<MyHomePage>
   bool crosstate = false;
   var crosstatestate = CrossFadeState.showFirst;
   var count = 0;
+
   late Animation animation;
   late AnimationController animationController;
   late Animation animationColor;
   @override
   void initState() {
     super.initState();
+
     animationController =
         AnimationController(vsync: this, duration: Duration(seconds: 15));
     animation = Tween(begin: 1.0, end: 200.0).animate(animationController);
@@ -360,11 +362,13 @@ class _MyHomePageState extends State<MyHomePage>
                                 width: 50,
                                 height: 50,
                                 child: ElevatedButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      count++;
-                                      print(count);
-                                    });
+                                  onPressed: () async {
+                                    count++;
+                                    var counter =
+                                        await SharedPreferences.getInstance();
+                                    counter.setInt("counter", count);
+                                    print(count);
+                                    setState(() {});
                                   },
                                   child: Center(
                                     child: Icon(
@@ -405,7 +409,9 @@ class _MyHomePageState extends State<MyHomePage>
                     // ),
                     child: SizedBox.shrink(
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          getCount();
+                        },
                         child: Text('Button'),
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blueAccent),
@@ -440,7 +446,7 @@ class _MyHomePageState extends State<MyHomePage>
                     color: Colors.black87,
                     curve: Curves.easeInExpo,
                   ),
-                  Tab(text: 'TAB',),
+
                   ElevatedButton(
                       onPressed: () {
                         flag = !flag;
@@ -676,4 +682,10 @@ class FieldsInputCus extends StatelessWidget {
       )),
     );
   }
+
 }
+  void getCount() async {
+    var getcount = await SharedPreferences.getInstance();
+    print(getcount.getInt("counter"));
+    // return getcount.getInt("counter") == null ? 0 : getcount.getInt("counter");
+  }
