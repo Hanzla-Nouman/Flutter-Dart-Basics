@@ -14,7 +14,7 @@ class HeroPage extends StatelessWidget {
               tag: "background",
               child: ClipRRect(
                 child: Image.asset('assets/images/github.jpg'),
-                
+                borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20),bottomRight: Radius.circular(20)),
               ),
             ),
         Container(

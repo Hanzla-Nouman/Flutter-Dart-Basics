@@ -46,7 +46,8 @@ var dummyData = ['Ali', 'Ahmad', 'Hanzla', 'Hamza', 'Tayyab'];
 var email = TextEditingController();
 var password = TextEditingController();
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   var _width = 200.0;
   var _height = 100.0;
   var myOp = 1.0;
@@ -55,6 +56,25 @@ class _MyHomePageState extends State<MyHomePage> {
   bool crosstate = false;
   var crosstatestate = CrossFadeState.showFirst;
   var count = 0;
+  late Animation animation;
+  late AnimationController animationController;
+  late Animation animationColor;
+  @override
+  void initState() {
+    super.initState();
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 15));
+    animation = Tween(begin: 1.0, end: 200.0).animate(animationController);
+    animationColor = ColorTween(begin: Colors.brown, end: Colors.black)
+        .animate(animationController);
+
+    animationController.addListener(() {
+      print(animation.value);
+      setState(() {});
+    });
+    animationController.forward();
+  }
+
   @override
   Widget build(BuildContext context) {
     var time = DateTime.now();
@@ -206,15 +226,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         width: 150,
                         height: 150,
                         decoration: BoxDecoration(
-                            gradient: RadialGradient(colors: [
-                              Color(0xffffecd2),
-                              Color(0xfffecb69f),
-                            ],
-                            //  stops: [
-                            //   0.5,
-                            //   1.0
-                            // ],
-                             center: Alignment.topLeft),
+                            gradient: RadialGradient(
+                                colors: [
+                                  Color(0xffffecd2),
+                                  Color(0xfffecb69f),
+                                ],
+                                //  stops: [
+                                //   0.5,
+                                //   1.0
+                                // ],
+                                center: Alignment.topLeft),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 4,
@@ -419,6 +440,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.black87,
                     curve: Curves.easeInExpo,
                   ),
+                  Tab(text: 'TAB',),
                   ElevatedButton(
                       onPressed: () {
                         flag = !flag;
@@ -492,6 +514,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 builder: (context) => HeroPage()));
                       },
                     ),
+                  ),
+                  Container(
+                    width: animation.value,
+                    height: animation.value,
+                    color: animationColor.value,
                   ),
 
                   Wrap(
