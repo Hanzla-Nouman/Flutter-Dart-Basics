@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage>
     super.initState();
 
     animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 15));
+        AnimationController(vsync: this, duration: Duration(seconds: 5));
     animation = Tween(begin: 1.0, end: 200.0).animate(animationController);
     animationColor = ColorTween(begin: Colors.brown, end: Colors.black)
         .animate(animationController);
@@ -224,6 +224,7 @@ class _MyHomePageState extends State<MyHomePage>
                     height: 200,
                     color: Colors.green,
                     child: Center(
+
                       child: Container(
                         width: 150,
                         height: 150,
@@ -280,7 +281,7 @@ class _MyHomePageState extends State<MyHomePage>
                         ),
                         Expanded(
                           flex: 5,
-                          child: Container(
+                          child:  Container(
                             height: 200,
                             color: const Color.fromRGBO(20, 125, 170, 1),
                           ),
@@ -412,7 +413,7 @@ class _MyHomePageState extends State<MyHomePage>
                         onPressed: () {
                           getCount();
                         },
-                        child: Text('Button'),
+                        child:AbsorbPointer(child: Text('Button')) ,
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blueAccent),
                       ),

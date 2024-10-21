@@ -5,9 +5,10 @@ class HeroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
+      backgroundColor: Colors.brown,
+        body:SingleChildScrollView(child:  Column(
       children: [
-       
+        
         
              Hero(
               transitionOnUserGestures: true,
@@ -37,6 +38,13 @@ class HeroPage extends StatelessWidget {
               }).toList()),
         )
       ],
-    ));
+    )),
+    bottomNavigationBar: BottomNavigationBar(currentIndex: 2 ,unselectedItemColor: Colors.black38,selectedItemColor: Colors.blue, backgroundColor: Colors.lightGreenAccent,items: [
+      BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
+      BottomNavigationBarItem(icon: Icon(Icons.contacts),label: 'Contact'),
+      BottomNavigationBarItem(icon: Icon(Icons.phone),label: 'Call'),
+      BottomNavigationBarItem(icon: Icon(Icons.call_end_outlined),label: 'End'),
+    ])
+    );
   }
 }
