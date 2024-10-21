@@ -39,7 +39,7 @@ class HeroPage extends StatelessWidget {
         )
       ],
     )),
-    bottomNavigationBar: BottomNavigationBar(currentIndex: 2 ,unselectedItemColor: Colors.black38,selectedItemColor: Colors.blue, backgroundColor: Colors.lightGreenAccent,items: [
+    bottomNavigationBar: BottomNavigationBar(type: BottomNavigationBarType.fixed,currentIndex: 2 ,unselectedItemColor: Colors.black38,selectedItemColor: Colors.blue, backgroundColor: Colors.lightGreenAccent,items: [
       BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
       BottomNavigationBarItem(icon: Icon(Icons.contacts),label: 'Contact'),
       BottomNavigationBarItem(icon: Icon(Icons.phone),label: 'Call'),
