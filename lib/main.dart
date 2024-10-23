@@ -224,7 +224,6 @@ class _MyHomePageState extends State<MyHomePage>
                     height: 200,
                     color: Colors.green,
                     child: Center(
-
                       child: Container(
                         width: 150,
                         height: 150,
@@ -281,7 +280,7 @@ class _MyHomePageState extends State<MyHomePage>
                         ),
                         Expanded(
                           flex: 5,
-                          child:  Container(
+                          child: Container(
                             height: 200,
                             color: const Color.fromRGBO(20, 125, 170, 1),
                           ),
@@ -413,7 +412,7 @@ class _MyHomePageState extends State<MyHomePage>
                         onPressed: () {
                           getCount();
                         },
-                        child:AbsorbPointer(child: Text('Button')) ,
+                        child: AbsorbPointer(child: Text('Button')),
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blueAccent),
                       ),
@@ -625,7 +624,6 @@ class FieldsInputCus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
       width: 300,
       child: Center(
           child: Column(
@@ -678,15 +676,34 @@ class FieldsInputCus extends StatelessWidget {
                 print(email.text.toString());
                 print(password.text.toString());
               },
-              child: Text("Sign in"))
+              child: Text("Sign in")),
+        
+          ElevatedButton(
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        height: 400,
+                        child: Center(
+                          child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: Text('Close')),
+                        ),
+                      );
+                    });
+              },
+              child: Text("Show Bottom Modal")),
         ],
       )),
     );
   }
-
 }
-  void getCount() async {
-    var getcount = await SharedPreferences.getInstance();
-    print(getcount.getInt("counter"));
-    // return getcount.getInt("counter") == null ? 0 : getcount.getInt("counter");
-  }
+
+void getCount() async {
+  var getcount = await SharedPreferences.getInstance();
+  print(getcount.getInt("counter"));
+  // return getcount.getInt("counter") == null ? 0 : getcount.getInt("counter");
+}
