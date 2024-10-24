@@ -89,11 +89,32 @@ class _MyHomePageState extends State<MyHomePage>
       Colors.green,
       Colors.grey
     ];
+    String dropdownvalue = 'One';
     return Scaffold(
         appBar: AppBar(
+          leading: DropdownButton(
+            icon: Icon(Icons.menu_open_sharp),
+              value: dropdownvalue,
+              items: [DropdownMenuItem(value: 'One',child: Text('Item'))],
+              onChanged: (newvalue) {
+                setState(() {
+                  dropdownvalue = newvalue!;
+                });
+              }),
           title: Text(
             "Home",
             style: TextStyle(fontFamily: "CustomFont1"),
+          ),
+        ),
+        endDrawer: Drawer(
+          width: 200,
+          child: ListView(
+            children: [
+              ListTile(
+                title: Text('Home'),
+              ),
+              ListTile(title: Text('Contact'))
+            ],
           ),
         ),
         body:
@@ -677,7 +698,6 @@ class FieldsInputCus extends StatelessWidget {
                 print(password.text.toString());
               },
               child: Text("Sign in")),
-        
           ElevatedButton(
               onPressed: () {
                 showModalBottomSheet(
