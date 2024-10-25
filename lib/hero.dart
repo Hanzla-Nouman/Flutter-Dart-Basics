@@ -19,21 +19,42 @@ class HeroPage extends StatelessWidget {
                     bottomRight: Radius.circular(20)),
               ),
             ),
-            SizedBox(
-              height: 100,
-              width: double.infinity,
-              child: Row(
-                children: [
-                  Draggable(
-                      child: Container(
-                        width: 90,
-                        height: 90,
-                        color: Colors.blueAccent,
-                      ),
-                      feedback: Container())
-                ],
+           SizedBox(
+          height: 100,
+          width: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Draggable(
+                axis: Axis.horizontal,
+                data: Colors.blueAccent, // Provide the data to be passed
+                child: Container(
+                  width: 90,
+                  height: 90,
+                  color: Colors.blueAccent,
+                ),
+                feedback: Container(
+                  width: 90,
+                  height: 90,
+                  color: Colors.deepPurple,
+                ),
               ),
-            ),
+              DragTarget(
+                
+                onAccept: (Color color) {
+                  print('Got it'); // Print statement when a color is accepted
+                },
+                builder: (BuildContext context, List<Color?> accepted, List rejected) {
+                  return Container(
+                    width: 90,
+                    height: 90,
+                    color: Colors.deepOrange,
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
             Container(
               height: 300,
               child: ListWheelScrollView(
