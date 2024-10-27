@@ -117,8 +117,9 @@ class _MyHomePageState extends State<MyHomePage>
             ],
           ),
         ),
-        body:
-            //  Center(
+        body: PageView(
+          children: [
+   //  Center(
             //     child: Container(
             //   height: 200,
             //   width: 200,
@@ -634,7 +635,14 @@ class _MyHomePageState extends State<MyHomePage>
               ),
             ),
           )),
-        ))
+        )), Container(
+          color: Colors.red,
+        ), Container(
+          color: Colors.yellow,
+        )
+          ],
+        )
+           
 
         // )
         );
@@ -644,7 +652,7 @@ class _MyHomePageState extends State<MyHomePage>
 class FieldsInputCus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       width: 300,
       child: Center(
           child: Column(
