@@ -7,12 +7,11 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Container(
         color: Colors.brown,
         child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
                 onPressed: () {
@@ -35,12 +34,24 @@ class IntroPage extends StatelessWidget {
                                     Navigator.of(context).pop();
                                   },
                                   child: Text('Close'))
-                            ], content: Text('This is alert dialog content'),
-                            contentPadding: EdgeInsets.all(20) ,
+                            ],
+                            content: Text('This is alert dialog content'),
+                            contentPadding: EdgeInsets.all(20),
                             title: Text('Flutter'),
                           ));
                 },
-                child: Text('Show Dialog'))
+                child: Text('Show Dialog')),
+            ElevatedButton(
+              child: Text('Show snapbar'),
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('This is snapbar'),
+                    action: SnackBarAction(label: 'Undo', onPressed: () {}),
+                  ),
+                );
+              },
+            )
           ],
         )),
       ),
